@@ -1,58 +1,57 @@
-# Code Review Assistant
+# 🔍 AI Code Review Assistant
 
-## Requirements 
+An intelligent, automated code review tool that combines Abstract Syntax Tree (AST) analysis, Machine Learning classification, and Large Language Model-powered suggestions to detect code smells and provide actionable refactoring advice.
 
-- `stremalit` Interactive UI framework
-- `scikit-learn` For ML model
-- `openai` For OpenAI Agents integration
-- `python-dotenv` For API Keys usage
+![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.31.0-red.svg)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-green.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## AST (Abstract Syntax Tree)
+## ✨ Features
 
-AST transforms Python code into a tree structure which represents code syntax. Each element (functions, classes, variables) becomes a tree node.
-
-Ex:
-```
-def greet(name):
-    print("Hello, " + name)
-```
-
-Becomes: 
-
-```
-Module
-└── FunctionDef (name='greet')
-    ├── arguments
-    │   └── arg (arg='name')
-    └── body
-        └── Expr
-            └── Call (func=print)
-```
-
----
-
-### Why to use AST
-
-AST allow us to "read" the code structure better and to detect different "patterns" (code smells)
-
----
-
-## ML Classifier with Scikit-Learn
-
-**What We're Building**:
-
-A machine learning model that takes code smell features and predicts severity levels (low/medium/high). This adds intelligence to our system by learning patterns from training data.
-
-###  Why Logistic Regression?
-
-- Logistic Regression is perfect for multi-class classification tasks like severity prediction
-
-- Fast training: Works well with small datasets
-
-- Interpretable: You can see which features matter most
-
-- Reliable: Achieves 90%+ accuracy on similar tasks
+- **🔬 AST-Based Detection** - Static code analysis using Python's Abstract Syntax Tree to identify anti-patterns
+- **🤖 ML-Powered Classification** - Scikit-Learn Logistic Regression model classifies issue severity (Low/Medium/High)
+- **💡 AI-Generated Suggestions** - OpenAI GPT-4 provides contextual, educational refactoring recommendations
+- **🎨 Interactive UI** - Beautiful Streamlit interface with syntax highlighting and real-time feedback
+- **⚡ Fast & Accurate** - Analyzes code in seconds with configurable detection thresholds
 
 
+## Interface 
 
- 
+![1](./Screenshot%202025-10-26%20at%2014.21.09.png)
+
+![2](./Screenshot%202025-10-26%20at%2014.21.25.png)
+
+![3](./Screenshot%202025-10-26%20at%2014.27.14.png)
+
+![4](./Screenshot%202025-10-26%20at%2014.27.35.png)
+## 🎯 Detected Code Smells
+
+- **Long Functions** - Functions exceeding recommended line counts
+- **Too Many Parameters** - Functions with excessive parameter lists
+- **God Classes** - Classes with too many responsibilities
+- **Complex Conditions** - Overly nested or complex conditional logic
+- **Deep Nesting** - Excessive indentation levels
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.11 or higher
+- OpenAI API key
+
+## 📊 How It Works
+
+1. **AST Parsing** - Code is parsed into an Abstract Syntax Tree
+2. **Pattern Matching** - Tree traversal identifies anti-patterns
+3. **Feature Extraction** - Metrics extracted for ML classification
+4. **Severity Prediction** - Logistic Regression classifies issue severity
+5. **AI Suggestion** - GPT-4 generates contextual refactoring advice
+
+## 🎓 Educational Value
+
+This tool not only identifies problems but **teaches best practices** by:
+- Explaining WHY code smells are problematic
+- Providing before/after code examples
+- Referencing SOLID principles and design patterns
+- Offering constructive, educational feedback
